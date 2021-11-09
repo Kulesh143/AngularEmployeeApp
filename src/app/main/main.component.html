@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" style="color:white;">User Manager</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+            <a class="nav-link" href="#main" routerLink="/">Main<span class="sr-only">(current)</span></a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" href="#home" routerLink="/home" >User</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#social" routerLink="/social" >Social</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#adlog" routerLink="/adlog" >Admin Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#adpage" routerLink="/adpage" >Admin Page</a>
+          </li>
+       </ul>
+     
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row" style="text-align: -webkit-center;  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;">
+<div class="col-md-12">
+
+    <button style="font-size: 180px;padding: 80px;margin: 50px;"><a [routerLink]="['social']" [state]="{ id:1 , name:'1'}">1</a>
+    </button>
+    <button style="font-size: 180px;padding: 80px;margin: 50px;"><a [routerLink]="['social']" [state]="{ id:1 , name:'2'}">2</a></button>
+    <button style="font-size: 180px;padding: 80px;margin: 50px;"><a [routerLink]="['social']" [state]="{ id:1 , name:'3'}">3</a></button>
+    <button style="font-size: 180px;padding: 80px;margin: 50px;"><a [routerLink]="['social']" [state]="{ id:1 , name:'4'}">4</a></button>
+    </div>
+    </div>

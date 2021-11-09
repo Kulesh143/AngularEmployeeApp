@@ -1,0 +1,21 @@
+<!-- Default form login -->
+<form form #AForm="ngForm" (ngSubmit)="loginCheck(AForm)" style="margin-top: 100px;" class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Admin Sign in</p>
+  
+    <!-- Email -->
+    <input style="width: 200px; font-size: 16px;" type="email" id="email" class="h4 mb-4" placeholder="Email" >
+  <br/>
+    <!-- Password -->
+    <input style="width: 200px; font-size: 16px;" type="password" id="password" class="h4 mb-4" placeholder="Password">
+  
+    <div class="d-flex justify-content-around">
+    
+    </div>
+  
+    <!-- Sign in button -->
+    <button style="width: 120px;" mdbBtn color="info" block="true" class="btn btn-info my-4 waves-effect waves-light" type="submit">Sign In</button>
+  
+    <!-- <a [routerLink]="['/adpage']">Sign In</a> -->
+  </form>
+  <!-- Default form login -->

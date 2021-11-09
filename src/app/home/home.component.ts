@@ -1,47 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './user';
-import { UserService } from './user.service';
+import { User } from '../user';
+import { UserService } from '../user.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import {Ng2TelInputModule} from 'ng2-tel-input';
-import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
-
+//require('angular-countries');
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent implements OnInit {
+export class HomeComponent implements OnInit {
   public user: User[];
   public editUser: User;
   public deleteUser: User;
   userlogged:boolean;
   constructor(private userService: UserService){}
-  separateDialCode = false;
-	SearchCountryField = SearchCountryField;
-	CountryISO = CountryISO;
-  PhoneNumberFormat = PhoneNumberFormat;
-	preferredCountries: CountryISO[] = [CountryISO.UnitedStates, CountryISO.UnitedKingdom];
-	phoneForm = new FormGroup({
-		phone: new FormControl(undefined, [Validators.required])
-	});
 
-	changePreferredCountries() {
-		this.preferredCountries = [CountryISO.India, CountryISO.Canada];
-	}
   ngOnInit() {
     this.getUsers();
     //this.userlogged= false;
-   
 
   }
-  onCountryChange(event)
-{
-  console.log(event.dialCode);
-  console.log(event.name);
-  console.log(event.iso2);
-}
+  
   public onU(): void {
     this.userlogged = true;
 
@@ -104,6 +84,8 @@ export class AppComponent implements OnInit {
       if (user.name.toLowerCase().indexOf(key.toLowerCase()) !== -1
       || user.email.toLowerCase().indexOf(key.toLowerCase()) !== -1
       || user.phone.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || user.job.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || user.country.toLowerCase().indexOf(key.toLowerCase()) !== -1
       || user.serialnumber.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
         results.push(user);
       }

@@ -1,0 +1,137 @@
+<!-- <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Register User</a>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#home" routerLink="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a  (click)="onU()" class="nav-link" href="#app" routerLink="/app" >User</a>
+          </li>
+                </ul>
+      </div>
+    </nav>
+  </div> -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" style="color:white;">User Manager</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+            <a class="nav-link" href="#home" routerLink="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" href="#home" routerLink="/home" >User</a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="#social" routerLink="/social" >Social</a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="#country" routerLink="/country" >Country</a>
+        </li>
+       </ul>
+     
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row" style="text-align: -webkit-center;  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;">
+<div class="col-md-12">
+<h2><p> Social Logins</p>
+</h2>
+<button class="btn btn-primary" style="background-color:#385998; border-color:#385998;margin-right: 3px;" (click)="signInWithFB()"><i class="fa fa-facebook"></i>Facebook</button>
+<button class="btn btn-primary" style="background-color: #C63D2D; border-color: #C63D2D;"(click)="signInWithGoogle()"><i class="fa fa-google"></i>Google</button>
+</div>
+<div class="row" style="text-align: -webkit-center;">
+<div class="card" style="width: 20rem;margin:20px 0 20px 0;text-align: -webkit-center;">
+
+<div class="card-body">
+ <img src="{{userID.photoUrl}}" style="text-align: -webkit-center;"/>
+<h4 class="card-title">{{userID.name}}</h4>
+<p class="card-text">{{userID.email}}</p>
+
+<form #phoneForm="ngForm" (ngSubmit)="onAddUser(phoneForm)">
+<div class="form-group">
+  <!-- <label for="name">Name</label> -->
+  <!-- <input type="hidden" ngModel name="name" class="form-control" id="name" placeholder="Name" required (change)="checkByDuplicateName($event.target.value)">
+   <p *ngIf="nameStatus" style="color: #f44336;">
+     name already exists
+   </p> -->
+   <input type="hidden" ngModel name="name" class="form-control" id="name" placeholder="Name" required>
+   <!-- <p *ngIf="nameStatus" style="color: #f44336;"> -->
+     <!-- name already exists -->
+   <!-- </p> -->
+   
+</div>
+<div class="form-group">
+  <!-- <label for="email">Email Address</label> -->
+  <input type="hidden" ngModel name="email" class="form-control" id="email" placeholder="Email" required>
+</div>
+<div class="form-group">
+ <!-- <label for="email">Email Address</label> -->
+ <input type="hidden" ngModel name="job" class="form-control" id="job" placeholder="Job" required>
+</div>
+<div class="form-group">
+  <!-- <label for="email">Email Address</label> -->
+  <input type="hidden" ngModel name="country" class="form-control" id="country" placeholder="Country" required>
+ </div>
+<!-- <div class="form-group">
+  <label for="phone">Serial Number</label>
+  <input type="text" ngModel name="serialnumber" class="form-control" id="jobTile" placeholder="Job title" required>
+</div> -->
+
+<div class="form-group">
+  <label for="phonee">Phonee</label>
+  <ngx-intl-tel-input [cssClass]="''" [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
+    [searchCountryFlag]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+    [selectFirstCountry]="false" [maxLength]="15" 
+    [phoneValidation]="true" [separateDialCode]="true" ngModel name="phonee" id="phonee">
+  </ngx-intl-tel-input>
+<!-- 
+  <br>
+	<div><strong>Is input valid:</strong>
+		<pre>{{ !phoneForm.form.controls['phonee'].invalid }}</pre>
+	</div>
+	<div><strong>Is input touched:</strong>
+		<pre>{{ phoneForm.form.controls['phonee'].touched }}</pre>
+	</div>
+	<div><strong>Is form valid:</strong>
+		<pre>{{ phoneForm.form.valid }}</pre>
+	</div>
+	<div><strong>Form value:</strong>
+		<pre>{{ phoneForm.form.value | json }}</pre>
+	</div>
+	<div><strong>Form validation errors:</strong>
+		<pre>{{ phoneForm.form.controls['phonee'].errors | json }}</pre>
+	</div> -->
+
+
+
+ 
+  <input type="hidden" ngModel name="phone" class="form-control" id="phone" >
+</div>
+<!-- <div class="form-group">
+  <label for="phone">Image URL</label>
+  <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="Image URL" required>
+</div> -->
+<div class="modal-footer">
+  <!-- <button hidden type="button" id="add-user-form" class="btn btn-secondary" data-dismiss="modal"(click)="onAdd(phoneForm)">Cancel</button> -->
+  <button type="submit" class="btn btn-primary"  style="width: 20rem;margin:20px 0 20px 0;text-align: -webkit-center;">Sign Up</button>
+ 
+</div>
+</form>
+
+
+
+</div>
+</div>
+
+    </div>
+  </div>
